@@ -9,12 +9,12 @@ description: hong 的个人博客，主要涉及到编程，个人爱好
 keywords: "前端, web, go, JavaScript, Vue, React"
 author: hong
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://hongxxh.github.io/blogs/
-root: /blogs/
+url: https://hongxxh.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: [README.md]
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -36,8 +36,9 @@ external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: true
 post_asset_folder: true
-relative_link: true
+relative_link: false
 future: false
+## 代码高亮设置
 highlight:
   enable: true
   line_number: true
@@ -72,6 +73,8 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins: hexo-generator-sitemap
+
 ## Themes: https://hexo.io/themes/
 theme: next
 
@@ -87,5 +90,5 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:hongxxh/blogs.git
+  repo: git@github.com:hongxxh/hongxxh.github.io.git
   branch: master

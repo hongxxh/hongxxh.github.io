@@ -69,7 +69,7 @@ leancloud_visitors:
 - 在弹出窗口选择 `1` 处 `Hook` 类型，然后 `2` 处选择 `beforeUpdate`，`3` 处选择刚才建立的 `Counter` 类。在 `4` 中粘贴下方代码后，点 `5` 处保存。
   ```javascript
   var query = new AV.Query("Counter");
-  if (request.object.updatedKeys.indexOf('time') !== -1) {
+  if (request.object.updatedKeys.includes('time')) {
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');
@@ -95,7 +95,6 @@ leancloud_visitors:
 
   ![15](https://lc-cqha0xyi.cn-n1.lcfile.com/d2f50de6cefea9fd0ed3.jpg)
 
-
 至此云引擎已成功部署，任何非法的访客数量更改请求都将失败。
 
 # 进一步设置权限
@@ -115,7 +114,7 @@ leancloud_visitors:
 
 - 打开 cmd 并切换至**博客根目录**，键入以下命令以安装 `hexo-leancloud-counter-security` 插件：
   ```
-  npm install hexo-leancloud-counter-security --save
+  npm install hexo-leancloud-counter-security
   ```
 
 - 打开**博客配置文件** `_config.yml`，新增以下配置：

@@ -7,13 +7,13 @@ mathjax: true
 date: 2019-08-30 18:11:06
 summary:
 tags:
-    深入理解 React 技术栈
-    notes
     React
 categories: 
-    React
+    技术
 ---
-####W3C 的模板规范 Web Components
+*新手入门后，可以加深了解的书籍。但是并没有特别深入。最重要的还是实践，当然研究源码最好了。*
+<!-- more --> 
+#### W3C 的模板规范 Web Components
 REACT 的三种创建实例方法：
 1. `React.createClass` 最古老，兼容性最好
 2.` ES6 classes。class xx extends Component{...}`
@@ -29,7 +29,7 @@ React.cloneElement(
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-#####React 组件差别
+##### React 组件差别
 nextElement|实际参数|结果
 :-|:-:|:-:
 null/false|空|创建 ReactDOMEmptyComponent 组件
@@ -45,7 +45,7 @@ React中对于 DOM 操作，不仅可以使用 findDOMNode 获得该组件 DOM�
 React 提供了事件绑定的功能，但是仍然有一些特殊情况需要自行绑定事件，例如 Popup 等 组件，当点击组件其他区域时可以收缩此类组件。这要求对组件以外的区域(一般指 document 和 body)进行事件绑定。
 React 中使用 DOM 最多的还是计算 DOM 的尺寸(即位置信息)。
 
-####React 中的事件
+#### React 中的事件
 React 基于 Virtual DOM 实现了一个 SyntheticEvent （合成事件，react为了解决跨平台，兼容性问题，自己封装了一套事件机制，代理了原生的事件，像在 jsx 中常见的 onClick、onChange这些都是合成事件）层，开发所定义的事件处理器会接收到一个 SyntheticEvent 对象的实例。所有事件都自动绑定到最外层上。如果需要访问原生事件对象，可以使用 nativeEvent 属性。
 在 React 底层，主要对合成事件做了两件事：**事件委派和自动绑定**。
 一、事件委派
@@ -66,7 +66,7 @@ input， select 等一些 DOM 结构在 React 被称为 **受控组件**。 Reac
 (3) 事件处理器通过合成事件对象 e 拿到改变后的状态，并更新应用的 state。 
 (4) setState 触发视图的重新渲染，完成表单组件值的更新。
 
-####React 中的 CSS Modules
+#### React 中的 CSS Modules
 - 所有样式都是局部化的，解决了命名冲突和全局污染问题;
 - class 名的生成规则配置灵活，可以以此来压缩 class 名;
 - 只需引用组件的 JavaScript，就能搞定组件所有的 JavaScript 和 CSS;
@@ -91,8 +91,7 @@ CSS Modules 是对现有的 CSS 做减法。为了追求简单可控，作者建
 ```
 进一步，可以了解 [react-css-modules](https://github.com/gajus/react-css-modules)
 
-
-#####React 生命周期
+##### React 生命周期
 React 生命周期：挂载、渲染、卸载。无状态组件挂载时只是方法调用，没有新建实例。
 
 

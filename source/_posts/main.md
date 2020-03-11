@@ -1,9 +1,8 @@
 ---
 title: Welcome
+comments: false
 tags:
-    welcome
 categories: 
-    welcome
 ---
 主要是与技术相关。
 

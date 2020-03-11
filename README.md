@@ -20,3 +20,8 @@ hexo serve
 ```bash
 hexo deploy
 ```
+
+### Hexo 使用
+```bash
+hexo new article
+```
