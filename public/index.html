@@ -191,11 +191,12 @@
             
 
   <div class="posts-expand">
-        
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hongxxh.github.io/2020/03/02/main/">
+    <link itemprop="mainEntityOfPage" href="https://hongxxh.github.io/2020/03/12/vue-element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -209,7 +210,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/02/main/" class="post-title-link" itemprop="url">Welcome</a>
+            <a href="/2020/03/12/vue-element/" class="post-title-link" itemprop="url">Vue 使用过程中遇到的坑</a>
         </h1>
 
         <div class="post-meta">
@@ -218,8 +219,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-09 10:38:19" itemprop="dateModified" datetime="2020-03-09T10:38:19+08:00">2020-03-09</time>
+                <time title="修改时间：2020-03-20 12:30:35" itemprop="dateModified" datetime="2020-03-20T12:30:35+08:00">2020-03-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
 
           
 
@@ -232,9 +242,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>主要是与技术相关。</p>
-<p>还有自己的一些文章分享。</p>
-
+          <h4 id="DOM-使用"><a href="#DOM-使用" class="headerlink" title="DOM 使用"></a>DOM 使用</h4><h5 id="同一个组件中两个-form-表单相互影响"><a href="#同一个组件中两个-form-表单相互影响" class="headerlink" title="同一个组件中两个 form 表单相互影响"></a>同一个组件中两个 form 表单相互影响</h5><p>问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。<br>解决：给两个表单分别加 key 值。<br>原因：没有这个属性的时候， vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，vue 为了提升性能，不会移动 dom 元素，只是更新相应元素的内容节点。<br>而在 v-if 中，切换 DOM 结构时也可以用来打破复用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/12/vue-element/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -249,7 +265,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -276,7 +294,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-08 19:44:40" itemprop="dateModified" datetime="2020-03-08T19:44:40+08:00">2020-03-08</time>
+                <time title="修改时间：2020-03-20 12:33:10" itemprop="dateModified" datetime="2020-03-20T12:33:10+08:00">2020-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +317,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="wepback"><a href="#wepback" class="headerlink" title="wepback"></a>wepback</h3><h5 id="webpack-原理"><a href="#webpack-原理" class="headerlink" title="webpack 原理"></a>webpack 原理</h5>
+          <h3 id="wepback"><a href="#wepback" class="headerlink" title="wepback"></a>wepback</h3><h5 id="webpack-原理"><a href="#webpack-原理" class="headerlink" title="webpack 原理"></a>webpack 原理</h5><p>推荐一个通俗易懂的入门视频：<br><a href="https://www.youtube.com/watch?v=Gc9-7PBqOC8&list=LLHK1mTHpwrUeYgF5gu-Kd4g" target="_blank" rel="noopener">Build Your Own Webpack</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/10/webpack/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -314,7 +340,8 @@
   
   
 
-        
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -388,7 +415,8 @@
   
   
 
-        
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -406,7 +434,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/30/react-notes/" class="post-title-link" itemprop="url">《深入理解 React 技术栈》 - 读后感</a>
+            <a href="/2019/08/30/react-notes/" class="post-title-link" itemprop="url">《深入理解 React 技术栈》 - 笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -415,7 +443,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-08 22:55:13" itemprop="dateModified" datetime="2020-03-08T22:55:13+08:00">2020-03-08</time>
+                <time title="修改时间：2020-03-12 11:18:03" itemprop="dateModified" datetime="2020-03-12T11:18:03+08:00">2020-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -530,20 +558,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

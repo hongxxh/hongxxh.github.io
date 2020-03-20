@@ -1,6 +1,7 @@
 ---
 title: Welcome
 comments: false
+notshowinmain: true
 tags:
 categories: 
 ---

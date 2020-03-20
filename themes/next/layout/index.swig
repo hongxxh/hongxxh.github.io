@@ -7,7 +7,9 @@
 
   <div class="posts-expand">
     {%- for post in page.posts.toArray() %}
-      {{ partial('_macro/post.swig', {post: post, is_index: true}) }}
+      {% if post.notshowinmain != true %}
+        {{ partial('_macro/post.swig', {post: post, is_index: true}) }}
+      {%- endif %}
     {%- endfor %}
   </div>
 

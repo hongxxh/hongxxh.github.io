@@ -23,14 +23,14 @@
   <meta name="description" content="新手入门后，可以加深了解的书籍。但是并没有特别深入。最重要的还是实践，当然研究源码最好了。">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《深入理解 React 技术栈》 - 读后感">
+<meta property="og:title" content="《深入理解 React 技术栈》 - 笔记">
 <meta property="og:url" content="https://hongxxh.github.io/2019/08/30/react-notes/index.html">
 <meta property="og:site_name" content="hong&#39;s blogs">
 <meta property="og:description" content="新手入门后，可以加深了解的书籍。但是并没有特别深入。最重要的还是实践，当然研究源码最好了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-08T14:55:13.205Z">
+<meta property="og:updated_time" content="2020-03-12T03:18:03.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《深入理解 React 技术栈》 - 读后感">
+<meta name="twitter:title" content="《深入理解 React 技术栈》 - 笔记">
 <meta name="twitter:description" content="新手入门后，可以加深了解的书籍。但是并没有特别深入。最重要的还是实践，当然研究源码最好了。">
 
 <link rel="canonical" href="https://hongxxh.github.io/2019/08/30/react-notes/">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>《深入理解 React 技术栈》 - 读后感 | hong's blogs</title>
+  <title>《深入理解 React 技术栈》 - 笔记 | hong's blogs</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《深入理解 React 技术栈》 - 读后感
+          《深入理解 React 技术栈》 - 笔记
         </h1>
 
         <div class="post-meta">
@@ -218,7 +218,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-08 22:55:13" itemprop="dateModified" datetime="2020-03-08T22:55:13+08:00">2020-03-08</time>
+                <time title="修改时间：2020-03-12 11:18:03" itemprop="dateModified" datetime="2020-03-12T11:18:03+08:00">2020-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,6 +282,13 @@
 </tbody></table>
 <p>因为 dom 元素同样没有生命周期，ReactDOMComponent 会对传入的 div，span 等标签通过 switch 进行识别和处理，除此之外流程与 ReactDOMEmptyComponent ，ReactDOMTextComponent 基本相同。</p>
 <p>ReactDOM：React 适用于移动端和 web 端，ReactDOM 就是 React 为了操作 web 端的方法。ReactDOM 的 API 非常少，只有 findDOMNode、unmountComponentAtNode 和 render。ReactDOM.render ：很重要，把 React 渲染的 Virtual DOM 渲染到浏览器的 DOM。<br>React中对于 DOM 操作，不仅可以使用 findDOMNode 获得该组件 DOM，还可以使用 refs 获得组件内部的 DOM 结构。（refs 会指向一个组件类的实例，所以可以调用该类定义的任何方法。直接查找 DOM 都是不推荐的）<br>不过，仍然有一些 DOM 操作是 React 无法避免或者正在努力避免的。比如，如果要调用 HTML5 Audio/Video 的 play 方法和 input 的 focus 方法， React 只能使用相应的 DOM 方法来实现。<br>React 提供了事件绑定的功能，但是仍然有一些特殊情况需要自行绑定事件，例如 Popup 等 组件，当点击组件其他区域时可以收缩此类组件。这要求对组件以外的区域(一般指 document 和 body)进行事件绑定。<br>React 中使用 DOM 最多的还是计算 DOM 的尺寸(即位置信息)。</p>
+<h4 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h4><p>Virtual DOM 实际上是在浏览器端用 JavaScript 实现的一套 DOM API，它之于 React 就好似一个虚拟空间，包括一整套 Virtual DOM 模型、生命周期的维护和管理、性能高效的 diff 算法和 将 Virtual DOM 展示为原生 DOM 的 Patch 方法等。（新代码的 virtual dom 概念没有了，换成了 fiber，所有的 diff 操作都是基于 fiber 的。不过基本原理还是类似的）<br>Virtual DOM 中的节点称为 ReactNode，它分为3种类型 ReactElement、ReactFragment 和 ReactText。</p>
+<h5 id="React-diff"><a href="#React-diff" class="headerlink" title="React diff"></a>React diff</h5><p>React diff 算法的 3 个策略。</p>
+<ul>
+<li>策略一: Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。</li>
+<li>策略二: 拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。</li>
+<li>策略三: 对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。</li>
+</ul>
 <h4 id="React-中的事件"><a href="#React-中的事件" class="headerlink" title="React 中的事件"></a>React 中的事件</h4><p>React 基于 Virtual DOM 实现了一个 SyntheticEvent （合成事件，react为了解决跨平台，兼容性问题，自己封装了一套事件机制，代理了原生的事件，像在 jsx 中常见的 onClick、onChange这些都是合成事件）层，开发所定义的事件处理器会接收到一个 SyntheticEvent 对象的实例。所有事件都自动绑定到最外层上。如果需要访问原生事件对象，可以使用 nativeEvent 属性。<br>在 React 底层，主要对合成事件做了两件事：<strong>事件委派和自动绑定</strong>。<br>一、事件委派<br>在使用 React 事件前，一定要熟悉它的事件代理机制。它并不会把事件处理函数直接绑定到真实的节点上，而是把所有事件绑定到结构的最外层，使用一个统一的事件监听器，这个事件监听器上维持了一个映射来保存所有组件内部的事件监听和处理函数。当组件挂载或卸载时，只是在这个统一的事件监听器上插入或删除一些对象；当事件发生时，首先被这个统一的事件监听器处理，然后在映射里找到真正的事件处理函数并调用。这样做简化了事件处理和回收机制，效率也有很大提升。<br>二、自动绑定<br>在 React 组件中，每个方法的上下文都会指向该组件的实例，即自动绑定 this 为当前组件。 而且 React 还会对这种引用进行缓存，以达到 CPU 和内存的最优化。在使用 ES6 classes 或者纯 函数时，这种自动绑定就不复存在了，需要手动实现 this 的绑定。</p>
 <ul>
 <li>bind 方法。this.func.bind(this, …args)</li>
@@ -289,6 +296,18 @@
 <li>箭头函数<br>值得注意的是，在 React 中使用 DOM 原生事件时，一定要在组件卸载时手动移除，否则很可能出现内存泄漏的问题。而使用合成事件系统时则不需要，因为 React 内部已经帮开发者妥善地处理了。<br>React 合成事件系统的委托机制，在合成事件内部仅仅对最外层的容器进行了绑定，并且依赖事件的冒泡机制完成了委派。<br>用 reactEvent.nativeEvent. stopPropagation() 来阻止冒泡是不行的。阻止 React 事件冒泡的行为只能用于 React 合成事件系统中，且没办法阻止原生事件的冒泡。反之，在原生事件中的阻止冒泡行为，却可以阻止 React 合成事件的传播。<br>实际上，React 的合成事件系统只是原生 DOM 事件系统的一个子集。它仅仅实现了 DOM Level 3 的事件接口，并且统一了浏览器间的兼容问题。有些事件 React 并没有实现，或者受某些限制没办法去实现，比如 window 的 resize 事件。</li>
 </ul>
 <p>input， select 等一些 DOM 结构在 React 被称为 <strong>受控组件</strong>。 React 受控组件更新 state 的流程：<br>(1) 可以通过在初始 state 中设置表单的默认值。<br>(2) 每当表单的值发生变化时，调用 onChange 事件处理器。<br>(3) 事件处理器通过合成事件对象 e 拿到改变后的状态，并更新应用的 state。<br>(4) setState 触发视图的重新渲染，完成表单组件值的更新。</p>
+<h5 id="React-间的组件通信"><a href="#React-间的组件通信" class="headerlink" title="React 间的组件通信"></a>React 间的组件通信</h5><ul>
+<li>父组件向子组件通信：使用 props 属性</li>
+<li>子组件向父组件通信：回调函数方法</li>
+<li>有嵌套关系的跨级组件通信：向更高级别的组件层层传递 props（不建议，略显冗余）。<br>在 React 中，我们可以使用 context 来实现跨级父子组件间的通信。不过 React 官方并不建议大量使用 context，因为尽管它可以减少逐层传递，但当组件结构复杂的时候，我们并不知道 context 是从哪里传过来的。总体的原则是如果我们真的需要 context，那么建议写成高阶组件来实现。</li>
+<li>无嵌套关系的组件通信：自定义事件。处理事件的过程中需要注意，在 componentDidMount 事件中，如果组件挂载完成，再订阅事件;当组件卸载的时候，在 componentWillUnmount 事件中取消事件的订阅。</li>
+</ul>
+<h4 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h4><p>React 生命周期：挂载、渲染、卸载。无状态组件挂载时只是方法调用，没有新建实例。</p>
+<ul>
+<li>mounted（实例化）: React Components 被 render 解析生成对应的 DOM 节点并被插入浏览器的 DOM 结构这一过程。<br>   getDefaultProps -&gt; getInitialState() -&gt; getDerivedStateFromProps (componentWillMount 删除) -&gt; render -&gt; componentDidMount</li>
+<li>updated（存在期）:一个 mounted 的 React Components 被重新 render 的过程：setState() or setProps()<br>   getDerivedStateFromProps ( componentWinllReceiveProps 删除 ) -&gt; shouldComponentUpdate &lt;-&gt; (componentWillUpdate -&gt; 删除 )  render -&gt; getSnapshotBeforeUpdate (新增) -&gt; componentDidUpdate</li>
+<li>unmounted（销毁&amp;清理）: 一个 mounted 的 React Components 对应的 DOM 节点被从 DOM 结构中移除的过程。<br>   componentWillUnmount</li>
+</ul>
 <h4 id="React-中的-CSS-Modules"><a href="#React-中的-CSS-Modules" class="headerlink" title="React 中的 CSS Modules"></a>React 中的 CSS Modules</h4><ul>
 <li>所有样式都是局部化的，解决了命名冲突和全局污染问题;</li>
 <li>class 名的生成规则配置灵活，可以以此来压缩 class 名;</li>
@@ -304,7 +323,6 @@
 </li>
 </ul>
 <p>进一步，可以了解 <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">react-css-modules</a></p>
-<h5 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h5><p>React 生命周期：挂载、渲染、卸载。无状态组件挂载时只是方法调用，没有新建实例。</p>
 
     </div>
 
@@ -387,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#W3C-的模板规范-Web-Components"><span class="nav-number">1.</span> <span class="nav-text">W3C 的模板规范 Web Components</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-组件差别"><span class="nav-number">1.1.</span> <span class="nav-text">React 组件差别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-中的事件"><span class="nav-number">2.</span> <span class="nav-text">React 中的事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-中的-CSS-Modules"><span class="nav-number">3.</span> <span class="nav-text">React 中的 CSS Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-生命周期"><span class="nav-number">3.1.</span> <span class="nav-text">React 生命周期</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#W3C-的模板规范-Web-Components"><span class="nav-number">1.</span> <span class="nav-text">W3C 的模板规范 Web Components</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-组件差别"><span class="nav-number">1.1.</span> <span class="nav-text">React 组件差别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtual-DOM"><span class="nav-number">2.</span> <span class="nav-text">Virtual DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-diff"><span class="nav-number">2.1.</span> <span class="nav-text">React diff</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-中的事件"><span class="nav-number">3.</span> <span class="nav-text">React 中的事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-间的组件通信"><span class="nav-number">3.1.</span> <span class="nav-text">React 间的组件通信</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-生命周期"><span class="nav-number">4.</span> <span class="nav-text">React 生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-中的-CSS-Modules"><span class="nav-number">5.</span> <span class="nav-text">React 中的 CSS Modules</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -403,20 +421,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
