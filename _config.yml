@@ -6,7 +6,7 @@
 title: hong's blogs
 subtitle: 述说
 description: hong 的个人博客，主要涉及到编程，个人爱好
-keywords: "前端, web, go, JavaScript, Vue, React"
+keywords: "web 前端, JavaScript, Vue, React, go"
 author: hong
 language: zh-CN
 timezone: Asia/Shanghai
@@ -73,7 +73,14 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-plugins: hexo-generator-sitemap
+Plugins:
+  hexo-generator-baidu-sitemap
+  hexo-generator-sitemap
+
+baidusitemap:
+  path: baidusitemap.xml
+sitemap:
+  path: sitemap.xml
 
 ## Themes: https://hexo.io/themes/
 theme: next
