@@ -125,11 +125,5 @@ jsonContent:
     categories: false
     tags: true
 
-## Themes: https://github.com/theme-next/hexo-theme-next
-theme: next
-scheme: Pisces
-menu:
-  home: /
-  tags: /tags
-sidebar:
-  position: left
+## Themes: https://github.com/litten/hexo-theme-yilia
+theme: yilia
