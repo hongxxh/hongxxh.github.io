@@ -105,6 +105,7 @@ deploy:
   type: git
   repo: git@github.com:hongxxh/hongxxh.github.io.git
   branch: master
+  message: "Deploy updates"
 
 jsonContent:
   meta: false
