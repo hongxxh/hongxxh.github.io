@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ gitalk_css_uri }}">
 
 {%- set gitalk_js_uri = theme.vendors.gitalk_js or '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js' %}
+
 <script>
 NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('{{ gitalk_js_uri }}', () => {
@@ -13,10 +14,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       owner       : '{{ theme.gitalk.github_id }}',
       admin       : ['{{ theme.gitalk.admin_user }}'],
       id          : '{{ gitalk_md5(page.path) }}',
-      labels: '{{ theme.gitalk.labels }}'.split(',').filter(l => l),
-      perPage: {{ theme.gitalk.perPage }},
-      pagerDirection: '{{ theme.gitalk.pagerDirection }}',
-      createIssueManually: {{ theme.gitalk.createIssueManually }},
       {%- if theme.gitalk.language == '' %}
         language: window.navigator.language || window.navigator.userLanguage,
       {% else %}

@@ -8,7 +8,7 @@ mathjax: true
 date: 2024-11-06 10:57:42
 summary:
 archives:
-tags: 诗歌
+tags: ["诗歌", "随笔"]
 categories: 文学
 ---
 

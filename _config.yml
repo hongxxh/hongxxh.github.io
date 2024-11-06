@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: [README.md, "./source/BingSiteAuth.xml"]
+skip_render: [README.md, "/BingSiteAuth.xml"]
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -91,9 +91,6 @@ baidusitemap:
 sitemap:
   path: sitemap.xml
 
-## Themes: https://hexo.io/themes/
-theme: next
-
 # search
 ## hexo-generator-searchdb
 search:
@@ -108,3 +105,31 @@ deploy:
   type: git
   repo: git@github.com:hongxxh/hongxxh.github.io.git
   branch: master
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
+
+## Themes: https://github.com/theme-next/hexo-theme-next
+theme: next
+scheme: Pisces
+menu:
+  home: /
+  tags: /tags
+sidebar:
+  position: left
