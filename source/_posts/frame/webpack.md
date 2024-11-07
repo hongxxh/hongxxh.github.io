@@ -1,12 +1,15 @@
 ---
 title: webpack 使用
+router: js
 top: false
 cover: false
 toc: true
 mathjax: true
 date: 2020-01-10
 summary:
-tags: webpack
+tags: 
+ - webpack
+ - web
 categories: 技术
 ---
 

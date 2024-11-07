@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+router: 
 comments: false
 top: false
 cover: false
@@ -11,3 +12,5 @@ archives:
 tags:
 categories:
 ---
+
+<!-- more -->

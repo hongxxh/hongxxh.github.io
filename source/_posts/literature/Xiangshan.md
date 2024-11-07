@@ -1,5 +1,6 @@
 ---
 title: 彷《城东早春》-杨巨源
+router: article
 comments: false
 top: false
 cover: false
@@ -8,7 +9,9 @@ mathjax: true
 date: 2024-11-06 10:57:42
 summary:
 archives:
-tags: ["诗歌", "随笔"]
+tags:
+  - 诗歌
+  - 随笔
 categories: 文学
 ---
 

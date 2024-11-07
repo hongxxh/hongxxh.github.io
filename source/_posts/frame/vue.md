@@ -1,5 +1,6 @@
 ---
 title: Vue 使用过程中遇到的坑
+router: js
 top: false
 cover: false
 toc: true
@@ -7,7 +8,10 @@ mathjax: true
 date: 2020-03-12 11:20:50
 summary:
 archives:
-tags: ["Vue", "JavaScript"]
+tags:
+  - Vue
+  - JavaScript
+  - web
 categories: 技术
 ---
 

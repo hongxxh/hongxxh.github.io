@@ -1,5 +1,6 @@
 ---
 title: Taro 使用过程中遇到的坑
+router: js
 top: false
 cover: false
 toc: true
@@ -7,7 +8,9 @@ mathjax: true
 date: 2019-08-30 18:59:13
 summary:
 archives:
-tags: Taro
+tags: 
+ - Taro
+ - web
 categories: 技术
 ---
 

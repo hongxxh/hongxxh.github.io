@@ -1,12 +1,16 @@
 ---
 title: 《深入理解 React 技术栈》 - 笔记
+router: js
 top: false
 cover: false
 toc: true
 mathjax: true
 date: 2019-08-30 18:11:06
 summary:
-tags: React
+tags:
+  - React
+  - JavaScript
+  - web
 categories: 技术
 ---
 
