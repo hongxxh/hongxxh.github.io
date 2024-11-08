@@ -8,6 +8,113 @@
 ]]></content>
   </entry>
   <entry>
+    <title>基础类算法</title>
+    <url>/computer/algorithm/base/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>算法是编程的核心。算法是指解决特定问题的一系列明确的指令步骤。</p>
+<span id="more"></span>
+
+<h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><p>二分法是最常见的算法之一。要求数组元素已按升序或降序排列。每次迭代能将搜索范围缩小一半，时间复杂度为 𝑂(log 𝑛)，相较于线性查找的 𝑂(𝑛)，效率更高。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">binarySearch</span>(<span class="params">arr, target</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right = arr.<span class="property">length</span> - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 注意 [left, right] 的区间，这里是包含</span></span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right) &#123;</span><br><span class="line">        <span class="keyword">const</span> mid = left + <span class="title class_">Math</span>.<span class="title function_">floor</span>((right - left) / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (arr[mid] === target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid; <span class="comment">// 找到目标值，返回索引</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; target) &#123;</span><br><span class="line">            left=mid+<span class="number">1</span>; <span class="comment">// 目标在右半部分</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right=mid-<span class="number">1</span>; <span class="comment">// 目标在左半部分</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// 目标值不存在</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/computer/algorithm/structure/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>数据结构</strong>即数据元素相互之间存在的一种或多种特定关系集合。用于组织、管理和存储数据，目的是提高数据操作的效率。</p>
+<p>基本数据结构有：数组、栈、队列、链表、树、图、散列表（hash）、堆</p>
+<p>从存储方式来看，数据结构的<strong>基本存储</strong>方式只有两种：数组（顺序存储）和链表（链式存储）。</p>
+<span id="more"></span>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>一组相同类型的数据的集合，存储在连续的内存中。（对于一部分编程语言而言，数组的内存空间是固定的，如 C）</p>
+<p>数组元素支持随机访问（索引）。但是数组元素的插入和删除相对复杂，需要对操作位置后的数组元素进行移动操作。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 增删</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">array.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">0</span>, <span class="number">3</span>);  <span class="comment">// 在索引 2 位置添加元素 3， array [1, 2, 3, 4, 5]</span></span><br><span class="line">array.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">2</span>);     <span class="comment">// 从索引 1 开始删除两个元素， array [1, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">2</span>);  <span class="comment">// newArray 为 [3, 4, 5]，array 不变</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>一种后进先出（LIFO）的数据结构，常用于表达式求值、历史记录等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 实现栈</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">array.<span class="title function_">push</span>(<span class="number">1</span>);  <span class="comment">//  [1, 2, 3]</span></span><br><span class="line">array.<span class="title function_">pop</span>();  <span class="comment">//  [1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>一种先进先出（FIFO）的数据结构，常用于消息队列、BFS 等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 实现队列</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">array.<span class="title function_">unshift</span>(<span class="number">1</span>);  <span class="comment">//  [1, 2, 3]</span></span><br><span class="line">array.<span class="title function_">shift</span>();  <span class="comment">//  [2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>也可以用链表实现栈或队列</p>
+</blockquote>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>由节点组成的线性集合，每个节点包含数据和指向下一个节点的指针。</p>
+<p>由于链表的节点通过指针连接，位置不一定连续，不存在数组的扩容问题，但不支持随机访问。</p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>是一种层次结构，无环图，可以用链表来实现子节点之间的链接。</p>
+<p>一般树的遍历可以用递归来实现</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">traverse</span>(<span class="params">root: TreeNode</span>) &#123;</span><br><span class="line">    <span class="comment">// ... 前序遍历</span></span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">left</span>)</span><br><span class="line">    <span class="comment">// ... 中序遍历</span></span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">right</span>)</span><br><span class="line">    <span class="comment">// ... 后序遍历</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>网络结构，节点间任意连接，树和链表都可以看作图的特例</p>
+<p>图的遍历方式主要有两种：<strong>深度优先算法</strong>（DFS, Depth-First Search）和 <strong>广度优先算法</strong>（BFS, Breadth-First Search）。</p>
+<p>深度优先算法（DFS）沿着图的某一路径尽可能深入下去，直到无法继续，然后回溯到上一个节点再继续搜索。<br>这种遍历方式使用栈来保存遍历路径，一般使用递归实现。用来查找图的连通分量、拓扑排序等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// dfs</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dfs</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (visited.<span class="title function_">has</span>(node)) &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    visited.<span class="title function_">add</span>(node)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... operation</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> neighbor <span class="keyword">of</span> node) &#123;</span><br><span class="line">        <span class="title function_">dfs</span>(node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>广度优先算（BFS）按层次遍历图，先访问起始节点，然后访问其所有邻居节点，再逐层向外扩展<br>一般用来寻找最短路径、层次遍历等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bfs</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bfs</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">    <span class="keyword">let</span> queue=[node]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (queue.<span class="property">length</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> node = queue.<span class="title function_">shift</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// ... operation</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> neighbor <span class="keyword">of</span> node) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited.<span class="title function_">has</span>(neighbor)) &#123;</span><br><span class="line">                visited.<span class="title function_">add</span>(neighbor);</span><br><span class="line">                queue.<span class="title function_">push</span>(neighbor);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p>哈希表通过哈希函数将键映射到数组的索引，实现快速查找、插入和删除操作。</p>
+<p>在 JavaScript 中，散列表（哈希表）可以通过 Object 或 Map 实现。</p>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆是一种特殊的完全二叉树。二叉堆是一种完全二叉树，具有以下特点：</p>
+<ul>
+<li>每层节点从左到右依次填满，没有跳跃的空位。</li>
+<li>除了最后一层，其他层都是满的。</li>
+</ul>
+<p>所以堆通常用数组来实现，二叉堆可以非常自然地映射到数组中，且数组实现可以有效利用内存空间，避免额外的指针开销。</p>
+<h3 id="索引关系"><a href="#索引关系" class="headerlink" title="索引关系"></a>索引关系</h3><p>在数组中存储堆时，假设根节点在索引 0，则每个节点的索引位置满足以下关系：</p>
+<ul>
+<li>父节点索引为 i，则：<ul>
+<li>左子节点索引为 2 * i + 1</li>
+<li>右子节点索引为 2 * i + 2</li>
+</ul>
+</li>
+<li>子节点索引为 i，则：<ul>
+<li>父节点索引为 (i - 1) &#x2F; 2</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 小顶堆</span></span><br><span class="line"><span class="comment">// 堆插入</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapInsert</span>(<span class="params">val</span>) &#123;</span><br><span class="line">    heap.<span class="title function_">push</span>(val)</span><br><span class="line">    <span class="keyword">let</span> idx=heap.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(idx&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> parent=<span class="title class_">Number</span>.<span class="built_in">parseInt</span>((idx-<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (heap[parent] &lt;= heap[idx]) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        [heap[parent], heap[idx]] = [heap[idx], heap[parent]]</span><br><span class="line">        idx=parent;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 堆删除，只能删除最小值，即第一个值</span></span><br><span class="line"><span class="comment">// 先交换数组第一个和最后一个值，然后通过父子之间的比较、交换来获取极值</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapDelete</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> len=heap.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">    [heap[<span class="number">0</span>], heap[len]] = [heap[len], heap[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">const</span> val=heap.<span class="title function_">pop</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> idx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>((<span class="number">2</span>*idx+<span class="number">1</span>)&lt;len) &#123;</span><br><span class="line">        <span class="keyword">let</span> left=<span class="number">2</span>*idx+<span class="number">1</span>, right=<span class="number">2</span>*idx+<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> (heap?.[left]&gt;=heap[idx] &amp;&amp; ((heap?.[right] ?? <span class="title class_">Infinity</span>)&gt;=heap[idx])) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> smallestIdx = heap[left] &lt; (heap?.[right] ?? -<span class="title class_">Infinity</span>) ? left : right;</span><br><span class="line">        [heap[smallestIdx], heap[idx]] = [heap[idx], heap[smallestIdx]];</span><br><span class="line">        idx=smallestIdx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>computer</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 使用过程中遇到的坑</title>
+    <url>/js/frame/vue/</url>
+    <content><![CDATA[<h3 id="DOM-使用"><a href="#DOM-使用" class="headerlink" title="DOM 使用"></a>DOM 使用</h3><h4 id="同一个组件中两个-form-表单相互影响"><a href="#同一个组件中两个-form-表单相互影响" class="headerlink" title="同一个组件中两个 form 表单相互影响"></a>同一个组件中两个 form 表单相互影响</h4><p>问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。<br>解决：给两个表单分别加 key 值。<br>原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，Vue 为了提升性能，不会移动 dom 元素，只是更新相应元素的内容节点。<br>而在 v-if 中，切换 DOM 结构时也可以用来打破复用。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>JavaScript</tag>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack 使用</title>
+    <url>/js/frame/webpack/</url>
+    <content><![CDATA[<h3 id="wepback"><a href="#wepback" class="headerlink" title="wepback"></a>wepback</h3><h4 id="webpack-原理"><a href="#webpack-原理" class="headerlink" title="webpack 原理"></a>webpack 原理</h4><p>推荐一个通俗易懂的入门视频：<br><a href="https://www.youtube.com/watch?v=Gc9-7PBqOC8&list=LLHK1mTHpwrUeYgF5gu-Kd4g">Build Your Own Webpack</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《深入理解 React 技术栈》 - 笔记</title>
     <url>/js/frame/react-notes/</url>
     <content><![CDATA[<h3 id="W3C-的模板规范-Web-Components"><a href="#W3C-的模板规范-Web-Components" class="headerlink" title="W3C 的模板规范 Web Components"></a>W3C 的模板规范 Web Components</h3><p>REACT 的三种创建实例方法：</p>
@@ -97,9 +204,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>React</tag>
         <tag>JavaScript</tag>
         <tag>web</tag>
+        <tag>React</tag>
       </tags>
   </entry>
   <entry>
@@ -139,110 +246,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue 使用过程中遇到的坑</title>
-    <url>/js/frame/vue/</url>
-    <content><![CDATA[<h3 id="DOM-使用"><a href="#DOM-使用" class="headerlink" title="DOM 使用"></a>DOM 使用</h3><h4 id="同一个组件中两个-form-表单相互影响"><a href="#同一个组件中两个-form-表单相互影响" class="headerlink" title="同一个组件中两个 form 表单相互影响"></a>同一个组件中两个 form 表单相互影响</h4><p>问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。<br>解决：给两个表单分别加 key 值。<br>原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，Vue 为了提升性能，不会移动 dom 元素，只是更新相应元素的内容节点。<br>而在 v-if 中，切换 DOM 结构时也可以用来打破复用。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>web</tag>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>webpack 使用</title>
-    <url>/js/frame/webpack/</url>
-    <content><![CDATA[<h3 id="wepback"><a href="#wepback" class="headerlink" title="wepback"></a>wepback</h3><h4 id="webpack-原理"><a href="#webpack-原理" class="headerlink" title="webpack 原理"></a>webpack 原理</h4><p>推荐一个通俗易懂的入门视频：<br><a href="https://www.youtube.com/watch?v=Gc9-7PBqOC8&list=LLHK1mTHpwrUeYgF5gu-Kd4g">Build Your Own Webpack</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>web</tag>
-        <tag>webpack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基础类算法</title>
-    <url>/computer/algorithm/base/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>算法是编程的核心。算法是指解决特定问题的一系列明确的指令步骤。</p>
-<span id="more"></span>
-
-<h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><p>二分法是最常见的算法之一。要求数组元素已按升序或降序排列。每次迭代能将搜索范围缩小一半，时间复杂度为 𝑂(log 𝑛)，相较于线性查找的 𝑂(𝑛)，效率更高。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">binarySearch</span>(<span class="params">arr, target</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right = arr.<span class="property">length</span> - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 注意 [left, right] 的区间，这里是包含</span></span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right) &#123;</span><br><span class="line">        <span class="keyword">const</span> mid = left + <span class="title class_">Math</span>.<span class="title function_">floor</span>((right - left) / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (arr[mid] === target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid; <span class="comment">// 找到目标值，返回索引</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; target) &#123;</span><br><span class="line">            left=mid+<span class="number">1</span>; <span class="comment">// 目标在右半部分</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right=mid-<span class="number">1</span>; <span class="comment">// 目标在左半部分</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// 目标值不存在</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/computer/algorithm/structure/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>数据结构</strong>即数据元素相互之间存在的一种或多种特定关系集合。用于组织、管理和存储数据，目的是提高数据操作的效率。</p>
-<p>基本数据结构有：数组、栈、队列、链表、树、图、散列表（hash）、堆</p>
-<p>从存储方式来看，数据结构的<strong>基本存储</strong>方式只有两种：数组（顺序存储）和链表（链式存储）。</p>
-<span id="more"></span>
-
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>一组相同类型的数据的集合，存储在连续的内存中。（对于一部分编程语言而言，数组的内存空间是固定的，如 C）</p>
-<p>数组元素支持随机访问（索引）。但是数组元素的插入和删除相对复杂，需要对操作位置后的数组元素进行移动操作。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 增删</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">array.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">0</span>, <span class="number">3</span>);  <span class="comment">// 在索引 2 位置添加元素 3， array [1, 2, 3, 4, 5]</span></span><br><span class="line">array.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">2</span>);     <span class="comment">// 从索引 1 开始删除两个元素， array [1, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">2</span>);  <span class="comment">// newArray 为 [3, 4, 5]，array 不变</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>一种后进先出（LIFO）的数据结构，常用于表达式求值、历史记录等</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 实现栈</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">array.<span class="title function_">push</span>(<span class="number">1</span>);  <span class="comment">//  [1, 2, 3]</span></span><br><span class="line">array.<span class="title function_">pop</span>();  <span class="comment">//  [1, 2]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>一种先进先出（FIFO）的数据结构，常用于消息队列、BFS 等</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JS 实现队列</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">array.<span class="title function_">unshift</span>(<span class="number">1</span>);  <span class="comment">//  [1, 2, 3]</span></span><br><span class="line">array.<span class="title function_">shift</span>();  <span class="comment">//  [2, 3]</span></span><br></pre></td></tr></table></figure>
-
+    <title>《雪域求法记》 - 书评</title>
+    <url>/impression/literature/xueyu/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为要去藏地旅游，打算简单了解一下西藏的地理人文，看到有人推荐《雪域求法记——一个汉人喇嘛的口述史》这本书。</p>
 <blockquote>
-<p>也可以用链表实现栈或队列</p>
+<p>口述者邢肃芝是一位20世纪上半叶中国大动荡年代中亲身参与了汉藏两地错综复杂的历史演变的枢纽式人物。他生于民国时期，少时出家，在中原多地辗转学佛；在抗战时期，由川藏线进藏学习佛法，取得了藏传佛教最高学位拉然巴格西。45年抗战胜利后，他返回中原并还俗，后又受民国政府委派办拉萨小学。50年中原解放，西藏喇嘛政府驱逐汉人，邢肃芝从西藏由印度退返香港，后又去美国定居。</p>
 </blockquote>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>由节点组成的线性集合，每个节点包含数据和指向下一个节点的指针。</p>
-<p>由于链表的节点通过指针连接，位置不一定连续，不存在数组的扩容问题，但不支持随机访问。</p>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>是一种层次结构，无环图，可以用链表来实现子节点之间的链接。</p>
-<p>一般树的遍历可以用递归来实现</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">traverse</span>(<span class="params">root: TreeNode</span>) &#123;</span><br><span class="line">    <span class="comment">// ... 前序遍历</span></span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">left</span>)</span><br><span class="line">    <span class="comment">// ... 中序遍历</span></span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">right</span>)</span><br><span class="line">    <span class="comment">// ... 后序遍历</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>网络结构，节点间任意连接，树和链表都可以看作图的特例</p>
-<p>图的遍历方式主要有两种：<strong>深度优先算法</strong>（DFS, Depth-First Search）和 <strong>广度优先算法</strong>（BFS, Breadth-First Search）。</p>
-<p>深度优先算法（DFS）沿着图的某一路径尽可能深入下去，直到无法继续，然后回溯到上一个节点再继续搜索。<br>这种遍历方式使用栈来保存遍历路径，一般使用递归实现。用来查找图的连通分量、拓扑排序等</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// dfs</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dfs</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (visited.<span class="title function_">has</span>(node)) &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    visited.<span class="title function_">add</span>(node)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ... operation</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> neighbor <span class="keyword">of</span> node) &#123;</span><br><span class="line">        <span class="title function_">dfs</span>(node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>广度优先算（BFS）按层次遍历图，先访问起始节点，然后访问其所有邻居节点，再逐层向外扩展<br>一般用来寻找最短路径、层次遍历等</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bfs</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bfs</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">    <span class="keyword">let</span> queue=[node]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (queue.<span class="property">length</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> node = queue.<span class="title function_">shift</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// ... operation</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> neighbor <span class="keyword">of</span> node) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited.<span class="title function_">has</span>(neighbor)) &#123;</span><br><span class="line">                visited.<span class="title function_">add</span>(neighbor);</span><br><span class="line">                queue.<span class="title function_">push</span>(neighbor);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p>哈希表通过哈希函数将键映射到数组的索引，实现快速查找、插入和删除操作。</p>
-<p>在 JavaScript 中，散列表（哈希表）可以通过 Object 或 Map 实现。</p>
-<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆是一种特殊的完全二叉树。二叉堆是一种完全二叉树，具有以下特点：</p>
-<ul>
-<li>每层节点从左到右依次填满，没有跳跃的空位。</li>
-<li>除了最后一层，其他层都是满的。</li>
-</ul>
-<p>所以堆通常用数组来实现，二叉堆可以非常自然地映射到数组中，且数组实现可以有效利用内存空间，避免额外的指针开销。</p>
-<h3 id="索引关系"><a href="#索引关系" class="headerlink" title="索引关系"></a>索引关系</h3><p>在数组中存储堆时，假设根节点在索引 0，则每个节点的索引位置满足以下关系：</p>
-<ul>
-<li>父节点索引为 i，则：<ul>
-<li>左子节点索引为 2 * i + 1</li>
-<li>右子节点索引为 2 * i + 2</li>
-</ul>
-</li>
-<li>子节点索引为 i，则：<ul>
-<li>父节点索引为 (i - 1) &#x2F; 2</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 小顶堆</span></span><br><span class="line"><span class="comment">// 堆插入</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapInsert</span>(<span class="params">val</span>) &#123;</span><br><span class="line">    heap.<span class="title function_">push</span>(val)</span><br><span class="line">    <span class="keyword">let</span> idx=heap.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(idx&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> parent=<span class="title class_">Number</span>.<span class="built_in">parseInt</span>((idx-<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (heap[parent] &lt;= heap[idx]) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        [heap[parent], heap[idx]] = [heap[idx], heap[parent]]</span><br><span class="line">        idx=parent;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 堆删除，只能删除最小值，即第一个值</span></span><br><span class="line"><span class="comment">// 先交换数组第一个和最后一个值，然后通过父子之间的比较、交换来获取极值</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapDelete</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> len=heap.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">    [heap[<span class="number">0</span>], heap[len]] = [heap[len], heap[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">const</span> val=heap.<span class="title function_">pop</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> idx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>((<span class="number">2</span>*idx+<span class="number">1</span>)&lt;len) &#123;</span><br><span class="line">        <span class="keyword">let</span> left=<span class="number">2</span>*idx+<span class="number">1</span>, right=<span class="number">2</span>*idx+<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> (heap?.[left]&gt;=heap[idx] &amp;&amp; ((heap?.[right] ?? <span class="title class_">Infinity</span>)&gt;=heap[idx])) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> smallestIdx = heap[left] &lt; (heap?.[right] ?? -<span class="title class_">Infinity</span>) ? left : right;</span><br><span class="line">        [heap[smallestIdx], heap[idx]] = [heap[idx], heap[smallestIdx]];</span><br><span class="line">        idx=smallestIdx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h3><p>这本书大致介绍了口述者在 1950年 前的人生。<br>其少时出家，从小便受各寺院住持赏识，通习佛法。读者能够从中窥见一些民国时期中原地区宗教的情况。在各地学佛时，认识了很多藏地高僧，由此萌生了入藏求佛法的想法。也是自比向往大唐时玄奘求法的往事。<br>详述了入藏和求学过程中，他碰到的人、经历的曲折、看到的风土人情等；入藏后，除了入寺拜师学习佛法，他还四处探访藏地各地贵族和藏传佛教圣地，也详述了这些人物、经历。<br>总的而言，语言有些文言，但记述很详细，口述者观察得很仔细，能够从其描述中，了解民国时期藏地的风俗人情、政治、宗教、地理等状况。口述者作为一位亲自进入拉萨三大寺学习的僧人，对藏传佛教诸多细节描述，非常生动，如同亲临。</p>
+<p>但口述者对佛法过溢，中间对僧人部分有很多隐言，需要读者甄别。而且口述者以汉僧身份进藏，却得到诸多民国政府高层的帮助，此间目的，难免让人揣测；口述者驻藏时间不长不短，除去学习佛法，还四处走访藏地，确实精力充沛。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>吐蕃七世纪在青藏高原崛起，此后汉藏两地人员往来密切；元时设立宣政院，象征着中央政府对西藏地区的正式掌控；清朝通过金瓶掣签、驻藏大臣等手段，对西藏地区形成了较为完善的管理体系。</p>
+<p>然而，19 世纪中期以后，清朝日渐衰落，对藏区管控越发松垮。而北方俄国、南方英国（印度方向）都对西藏虎视眈眈。俄国蚕食新疆，妄图通过进而控制西藏，俯瞰亚洲；英国蚕食藏地边缘，妄图将西藏地区独立为缓冲区，由此保证大英帝国的明珠不受威胁。西藏喇嘛政府腐败堕落，勾结外国，意图脱离中央政府。</p>
+<p>俄国在 19 世纪便派遣俄籍蒙古僧人入藏，以求佛法之名，影响喇嘛政府对俄倾向。英国在 20 世纪初深感威胁，于是出兵入侵西藏，喇嘛政府逃亡。清末赵尓丰率川军入藏平乱，驱赶英军，然而川军纪律松弛，在 1911 年清朝灭亡后，也被藏人驱赶出藏。随后喇嘛政府在英军帮助下回归西藏主政。民国政府一直都在寻求机会重新与西藏地区联结，但由于领袖无能、政局动荡等原因，政府层面的正式接触都比较困难。</p>
+<p>喇嘛政府政教合一，崇尚佛教，民国政府以僧人作为联结点，成为汉藏地区一种切实有效的沟通方式。民国政府高层大多贪权恶劳，难以深耕藏地，秉持“中央思想”自视过大，难以与藏人打成一片；而像邢肃芝等宗教人士能深入理解藏人、喇嘛政府的习俗，从而采用恰当的沟通方式，切实促进双方联系。</p>
+<p><em>参考：《民国政府的西藏专使（1912-1949）》- 朱丽双</em></p>
+]]></content>
       <categories>
-        <category>computer</category>
-        <category>算法</category>
+        <category>读后感</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -254,8 +278,8 @@
         <category>文学</category>
       </categories>
       <tags>
-        <tag>诗歌</tag>
         <tag>随笔</tag>
+        <tag>诗歌</tag>
       </tags>
   </entry>
 </search>
