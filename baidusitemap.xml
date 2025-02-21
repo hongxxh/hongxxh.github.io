@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hongxxh.github.io/impression/literature/xueyu/</loc>
-    <lastmod>2024-11-08</lastmod>
+    <loc>https://hongxxh.github.io/network/network/tcp/</loc>
+    <lastmod>2024-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hongxxh.github.io/programming/programmingLanguage/javascript/</loc>
+    <lastmod>2024-11-14</lastmod>
   </url>
   <url>
     <loc>https://hongxxh.github.io/computer/algorithm/base/</loc>
-    <lastmod>2024-11-07</lastmod>
+    <lastmod>2024-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://hongxxh.github.io/impression/literature/xueyu/</loc>
+    <lastmod>2024-11-14</lastmod>
   </url>
   <url>
     <loc>https://hongxxh.github.io/computer/algorithm/structure/</loc>
+    <lastmod>2024-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://hongxxh.github.io/js/frame/taro-bugs/</loc>
     <lastmod>2024-11-07</lastmod>
   </url>
   <url>
@@ -18,10 +30,6 @@
   </url>
   <url>
     <loc>https://hongxxh.github.io/js/frame/webpack/</loc>
-    <lastmod>2024-11-07</lastmod>
-  </url>
-  <url>
-    <loc>https://hongxxh.github.io/js/frame/taro-bugs/</loc>
     <lastmod>2024-11-07</lastmod>
   </url>
   <url>

@@ -6,20 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongxxh.github.io">
-  <title>Taro 使用过程中遇到的坑 | hong&#39;s blogs</title>
+  <title>Archives | hong&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Taro 简介Taro 是京东凹凸实验室的多端统一开发框架，语法类似 React，生成能运行在微信&#x2F;百度&#x2F;字节跳动&#x2F;支付宝&#x2F; QQ 小程序、快应用、 H5 、 React Native 等平台的应用。产品需求是同时支持 h5 和 小程序访问，考虑到维护和开发效率的问题，决定选择支持多端的开发框架，比较了下目前开源的一些框架，选择了最为可靠的 Taro 。是大">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Taro 使用过程中遇到的坑">
-<meta property="og:url" content="https://hongxxh.github.io/js/frame/taro-bugs/index.html">
+  <meta name="description" content="hong 的个人博客，主要涉及到编程，个人爱好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="hong&#39;s blogs">
+<meta property="og:url" content="https://hongxxh.github.io/archives/page/2/index.html">
 <meta property="og:site_name" content="hong&#39;s blogs">
-<meta property="og:description" content="Taro 简介Taro 是京东凹凸实验室的多端统一开发框架，语法类似 React，生成能运行在微信&#x2F;百度&#x2F;字节跳动&#x2F;支付宝&#x2F; QQ 小程序、快应用、 H5 、 React Native 等平台的应用。产品需求是同时支持 h5 和 小程序访问，考虑到维护和开发效率的问题，决定选择支持多端的开发框架，比较了下目前开源的一些框架，选择了最为可靠的 Taro 。是大">
+<meta property="og:description" content="hong 的个人博客，主要涉及到编程，个人爱好">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-08-30T10:59:13.000Z">
-<meta property="article:modified_time" content="2024-11-07T07:38:50.919Z">
 <meta property="article:author" content="hong">
-<meta property="article:tag" content="web">
-<meta property="article:tag" content="Taro">
+<meta property="article:tag" content="web 前端, JavaScript, Vue, React, Go">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hong&#39;s blogs" type="application/atom+xml">
@@ -162,74 +159,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-frame/taro-bugs" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Taro 使用过程中遇到的坑
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/js/frame/react-notes/" class="archive-article-date">
+  	<time datetime="2019-08-30T10:11:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/js/frame/react-notes/">《深入理解 React 技术栈》 - 笔记</a>
     </h1>
   
 
-        
-        <a href="/js/frame/taro-bugs/" class="archive-article-date">
-  	<time datetime="2019-08-30T10:59:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Taro-简介"><a href="#Taro-简介" class="headerlink" title="Taro 简介"></a>Taro 简介</h3><p>Taro 是京东凹凸实验室的多端统一开发框架，语法类似 React，生成能运行在微信&#x2F;百度&#x2F;字节跳动&#x2F;支付宝&#x2F; QQ 小程序、快应用、 H5 、 React Native 等平台的应用。<br>产品需求是同时支持 h5 和 小程序访问，考虑到维护和开发效率的问题，决定选择支持多端的开发框架，比较了下目前开源的一些框架，选择了最为可靠的 Taro 。是大平台的开源框架，有较稳定的维护支持；语法与 React 相似，团队学习成本较小；社区最为活跃，修复 BUG 速度快。</p>
-<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><span id="more"></span>
-
-<p>京东高级前端开发工程师程帅老师说，前端开发框架的本质，当前所有流行的前端框架，抛开使用和实现层面的差异，以及一系列兼容性和性能优化层面的考虑，最终都要回归到 DOM 的操作上。也就是说，只要能够在小程序实现框架所需的 DOM&#x2F;BOM 的 API ，那就能够将这些前端框架运行在小程序上。而各端小程序处于安全等层面的考虑，都没有把 DOM&#x2F;BOM API 暴露出来，从而导致各种前端框架无法直接在小程序上运行。<br>Taro 就是给基于小程序的运行时实现了一套 DOM&#x2F;BOM 的 API，并将这一套 API 和小程序的渲染机制结合起来，从而实现了将各种语法的前端框架运行在小程序上。</p>
-<h3 id="微信小程序的坑"><a href="#微信小程序的坑" class="headerlink" title="微信小程序的坑"></a>微信小程序的坑</h3><p>小程序跟 h5 还是有挺大的不同的。Taro 即使号称是统一框架，有些地方也需要特别的处理。</p>
-<h4 id="Taro-CSS-样式不支持伪元素和伪类"><a href="#Taro-CSS-样式不支持伪元素和伪类" class="headerlink" title="Taro CSS 样式不支持伪元素和伪类"></a>Taro CSS 样式不支持伪元素和伪类</h4><p>微信小程序是支持伪元素和伪类的，但 Taro 中是不支持的。当然，如果写了 H5 中是生效的。</p>
-<h4 id="各组件-CSS-共用问题"><a href="#各组件-CSS-共用问题" class="headerlink" title="各组件 CSS 共用问题"></a>各组件 CSS 共用问题</h4><p>微信小程序默认组件 CSS 相互独立，所以只能通过增加 props 控制 className 的方式来改变在不同组件中的样式。</p>
-<h4 id="组件销毁问题"><a href="#组件销毁问题" class="headerlink" title="组件销毁问题"></a>组件销毁问题</h4><p>子组件的阶段 componentUnmont 无效，如果有类似 window.listener 之类的需要销毁，只有页面级 componentDidHide 实现</p>
-<h4 id="小程序内嵌-WebView-通信问题"><a href="#小程序内嵌-WebView-通信问题" class="headerlink" title="小程序内嵌 WebView 通信问题"></a>小程序内嵌 WebView 通信问题</h4><p><strong>大坑！</strong></p>
-<ol>
-<li>小程序的 WebView 只能在特定时机（小程序后退、组件销毁、分享）才能拿到消息</li>
-<li>小程序使用 WebView 的外链都得注册，且得写入特定的小程序安全代码（确实安全多了…<br>如果某些操作只能使用 WebView 完成，如支付之类的，建议引导去浏览器或者。类似俄罗斯套娃，先套一个本站的页面，再套一个外部页面，完成操作后后退…</li>
-</ol>
-<h3 id="JS-的坑"><a href="#JS-的坑" class="headerlink" title="JS 的坑"></a>JS 的坑</h3><h4 id="JS-浮点数运算问题"><a href="#JS-浮点数运算问题" class="headerlink" title="JS 浮点数运算问题"></a>JS 浮点数运算问题</h4><p>JS 存储浮点数机制: 采用的是 IEEE 754 定义的 64 位双精度浮点型来表示。在浮点数运算时，由于计算机无法准确表示大部分小数，而导致精度问题。</p>
-<ol>
-<li>先对运算的数据全部取整，再通过挪小数点来复原。（这个对乘法运算比较适用）</li>
-<li>* 1000 -&gt; 运算 -&gt; &#x2F; 1000。（注意，这个方法，如果小数较多时也会出现计算差错。）</li>
-<li>Math 库。（终极方案）</li>
-</ol>
-<h4 id="fetch-异步请求中断问题"><a href="#fetch-异步请求中断问题" class="headerlink" title="fetch 异步请求中断问题"></a>fetch 异步请求中断问题</h4><p>fetch 没有 abort 方法。所以无法中断请求。<br>可以用 promise.race ，将所有请求加入 promise 数组，待某一个返回后，“抛弃”其余请求。</p>
-<h4 id="fetch-请求-cookie-问题"><a href="#fetch-请求-cookie-问题" class="headerlink" title="fetch 请求 cookie 问题"></a>fetch 请求 cookie 问题</h4><p>Taro 内置的是 fetch 请求。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">By default, fetch won&#x27;t send or receive any cookies from the server, resulting in unauthenticated requests if the site relies on maintaining a user session (to send cookies, the credentials init option must be set).</span><br><span class="line">Since Aug 25, 2017. The spec changed the default credentials policy to same-origin. Firefox changed since 61.0b13.</span><br></pre></td></tr></table></figure>
-
-<p>而 fetch 默认是不会携带 cookie，服务器返回的也不会自动写入，得配置 credentials，无关跨域与否，也无关 get 、 post 方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Taro</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -242,90 +221,20 @@
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/js/frame/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack 使用
-        
-      </div>
-    </a>
   
   
-    <a href="/js/frame/react-notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《深入理解 React 技术栈》 - 笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Taro-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Taro 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9D%91"><span class="toc-number">2.</span> <span class="toc-text">微信小程序的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Taro-CSS-%E6%A0%B7%E5%BC%8F%E4%B8%8D%E6%94%AF%E6%8C%81%E4%BC%AA%E5%85%83%E7%B4%A0%E5%92%8C%E4%BC%AA%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">Taro CSS 样式不支持伪元素和伪类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%BB%84%E4%BB%B6-CSS-%E5%85%B1%E7%94%A8%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">各组件 CSS 共用问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%94%80%E6%AF%81%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.</span> <span class="toc-text">组件销毁问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E5%B5%8C-WebView-%E9%80%9A%E4%BF%A1%E9%97%AE%E9%A2%98"><span class="toc-number">2.4.</span> <span class="toc-text">小程序内嵌 WebView 通信问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-%E7%9A%84%E5%9D%91"><span class="toc-number">3.</span> <span class="toc-text">JS 的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JS-%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97%E9%97%AE%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">JS 浮点数运算问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fetch-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E4%B8%AD%E6%96%AD%E9%97%AE%E9%A2%98"><span class="toc-number">3.2.</span> <span class="toc-text">fetch 异步请求中断问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fetch-%E8%AF%B7%E6%B1%82-cookie-%E9%97%AE%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">fetch 请求 cookie 问题</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "https://hongxxh.github.io/js/frame/taro-bugs/",
-  owner: 'hongxxh',
-  repo: 'hongxxh.github.io',
-  oauth: {
-    client_id: 'd079aeff6eb5f53a0b16',
-    client_secret: '5b6a98474a7f912ac4dcb09a4d8454d309e66e4c',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -349,8 +258,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
