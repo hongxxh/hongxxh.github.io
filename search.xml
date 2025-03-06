@@ -370,12 +370,13 @@
 <p>HTML 规范定义了 microTask（微任务），而 <em>The microtask queue is not a task queue.</em><br>换句话说，所有非 microTask 的事件都是 task，即平常说的 macroTask（宏任务）。但这个 macroTask 在官方定义里名为 <strong>task</strong>。</p>
 <h4 id="那-task-队列里的事件的优先级是怎么样的呢？"><a href="#那-task-队列里的事件的优先级是怎么样的呢？" class="headerlink" title="那 task 队列里的事件的优先级是怎么样的呢？"></a>那 task 队列里的事件的优先级是怎么样的呢？</h4><p>规范里说“A task queue is a set of tasks.”，所以，调用顺序并不是队列的“先进先出”。</p>
 <p>每一个事件都有其特定的执行时机，常见的 task 执行顺序是：<br>I&#x2F;O 操作 -&gt; requestAnimationFrame -&gt; timers（setTimeout, setInterval）</p>
-<p>每执行一个 task，便会清空 microtask 队列，所以，如果同时存在 microtask，执行顺序是：<br>I&#x2F;O 操作 -&gt; microtasks -&gt; requestAnimationFrame -&gt; timers（setTimeout, setInterval）</p>
+<p>每执行一个 task，便会清空 microtask 队列，所以，如果同时存在 microtask，执行顺序是：<br>I&#x2F;O 操作 -&gt; microtasks -&gt; requestAnimationFrame -&gt; timers（setTimeout, setInterval）&#x2F;messageChannel</p>
 <p><strong>requestAnimationFrame</strong><br>window.requestAnimationFrame() 方法要求浏览器在下一次重绘之前，调用用户提供的回调函数。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 按钮点击</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&#x27;click&#x27;</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// timers</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;timers&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// microtask</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;microtask&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// requestAnimationFrame</span></span><br><span class="line"><span class="title function_">requestAnimationFrame</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;requestAnimationFrame&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 按钮点击</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&#x27;click&#x27;</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 与 timers 按顺序执行</span></span><br><span class="line">channel.<span class="property">port2</span>.<span class="title function_">postMessage</span>(<span class="string">&quot;Hello from port2!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// timers</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;timers&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// microtask</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;microtask&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// requestAnimationFrame</span></span><br><span class="line"><span class="title function_">requestAnimationFrame</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>() , <span class="string">&quot;:&quot;</span>, <span class="string">&quot;requestAnimationFrame&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>在 chrome 执行环境下，上述几个事件的调用顺序无论如何调整，都是</p>
 <p>click -&gt; microtask -&gt; requestAnimationFrame -&gt; timers</p>
+<p>换句话说，浏览器内部对执行时机进行了优化，保证用户响应能得到最快执行</p>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -394,6 +395,75 @@
       </categories>
       <tags>
         <tag>network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深拷贝</title>
+    <url>/copy/web/deepCopy/</url>
+    <content><![CDATA[<p>浅拷贝（Shallow Copy）：拷贝对象的第一层属性，但如果属性是引用类型（如对象、数组），拷贝的只是其引用地址。</p>
+<p>深拷贝（Deep Copy）：创建一个新的对象，并递归地复制原对象的所有属性，使得新对象与原对象在内存中完全独立。即修改新对象不会影响原对象。</p>
+<span id="more"></span>
+
+<h3 id="深拷贝需要考虑的点"><a href="#深拷贝需要考虑的点" class="headerlink" title="深拷贝需要考虑的点"></a>深拷贝需要考虑的点</h3><ul>
+<li>对象嵌套，即对象的属性也是对象。</li>
+<li>基本类型。可直接复制，但要注意 new Number(1) 这种对象类型</li>
+<li>symbol 类型。symbol 类型是 JS 中的基本类型，它是唯一且不可变的，无法真正“拷贝”，只能创建新的 Symbol。</li>
+<li>regex 类型。</li>
+<li>函数。JS 中的函数比较复杂，需要考虑普通函数、箭头函数、闭包、原型方法等情况。</li>
+<li>循环引用。需要用 Map 存储当前 key&#x2F;value 对象</li>
+<li>iterable 类型，如 Set、 Map。</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><strong>浅拷贝</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> copyObj = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者 ... 展开运算符</span></span><br><span class="line"><span class="keyword">const</span> copyObj = &#123;...obj&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改 obj.b 中的属性同样会影响 copyObj</p>
+<p>对于数组复制：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arrCopy = arr.<span class="title function_">slice</span>() || <span class="keyword">const</span> arrCopy = [].<span class="title function_">concat</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>深拷贝</strong></p>
+<p>1.JSON 方式</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> deepCopy = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj));</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(deepCopy.<span class="property">b</span> === obj.<span class="property">b</span>); <span class="comment">// false（已深拷贝）</span></span><br></pre></td></tr></table></figure>
+
+<p>简单，适用于简单对象。但无法拷贝 function、Symbol、undefined、Date、RegExp、Map、Set 等。且会丢失原型链。</p>
+<p>2.structuredClone</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125;, <span class="attr">d</span>: <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) &#125;;</span><br><span class="line"><span class="keyword">const</span> clonedObj = <span class="variable language_">window</span>.<span class="title function_">structuredClone</span>(obj);</span><br></pre></td></tr></table></figure>
+
+<p>structuredClone() 是现代浏览器提供的 API，支持 对象、数组、Date、RegExp、Map、Set、Blob、File、ArrayBuffer 等。<br>但不能拷贝 function、Symbol、原型链。</p>
+<p>注意：structuredClone 拷贝不支持的类型，如 Symbol 时，浏览器会报错。</p>
+<blockquote>
+<p>node 17 版本以上才支持。</p>
+</blockquote>
+<ol start="3">
+<li>messegeChannel</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">obj</span>) &#123;   </span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;     </span><br><span class="line">		<span class="keyword">const</span> &#123; port1, port2 &#125; = <span class="keyword">new</span> <span class="title class_">MessageChannel</span>();     </span><br><span class="line">		port2.<span class="property">onmessage</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> <span class="title function_">resolve</span>(event.<span class="property">data</span>);     </span><br><span class="line">		port1.<span class="title function_">postMessage</span>(obj);   </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">const</span> obj=&#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125;, <span class="attr">d</span>: <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]), <span class="attr">d</span>: <span class="title class_">Symbol</span>(<span class="string">&#x27;key&#x27;</span>), <span class="attr">e</span>: <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&#x27;1&#x27;</span>)&#125;</span><br><span class="line"><span class="title function_">deepClone</span>(obj).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(res));</span><br></pre></td></tr></table></figure>
+
+<p>messegeChannel 会建立一个消息通道，并通过两端的端口发送消息实现通信。同样也可以实现深拷贝。</p>
+<p>类似于 <code>structuredClone</code>，支持 Date、Set、Map 等类型。不支持 symbol、function</p>
+<blockquote>
+<p>上述提到的 API 都不支持循环引用</p>
+</blockquote>
+<p>4.Lodash 提供了 cloneDeep，是一个经过优化的深拷贝方法，能完美处理大多数情况。</p>
+<p>5.简单实现一个 cloneDeep</p>
+<p>列举对不同类型的数据的不同处理</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正则</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cloneRegexp</span> = (<span class="params">reg</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    resource, <span class="comment">// 正则的匹配文本（如 ^12）</span></span><br><span class="line">    flags, <span class="comment">// 正则的修饰符（如 g）</span></span><br><span class="line">    lastIndex <span class="comment">// 用于指定下次匹配从什么时候开始</span></span><br><span class="line">  &#125; = reg;</span><br><span class="line">  <span class="keyword">const</span> _reg = <span class="keyword">new</span> <span class="title class_">Regexp</span>(resource, flags);</span><br><span class="line">  _reg.<span class="property">lastIndex</span> = lastIndex;</span><br><span class="line">  <span class="keyword">return</span> _reg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类似 Number(1) 的对象基本类型</span></span><br><span class="line"><span class="keyword">new</span> obj.<span class="title function_">constructor</span>(<span class="params">obj.valueOf()</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 Symbol 的描述（ES2019+）</span></span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="title class_">Symbol</span>(sym1.<span class="property">description</span>);  <span class="comment">// 创建一个新的 Symbol，但不是 sym1 的拷贝。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set, map 需要分别处理</span></span><br><span class="line">obj.<span class="title function_">forEach</span>(<span class="function">(<span class="params">val, key</span>) =&gt;</span> &#123;</span><br><span class="line">    _obj.<span class="title function_">add</span>(<span class="title function_">deepClone</span>(val, map));</span><br><span class="line">&#125;);</span><br><span class="line">obj.<span class="title function_">forEach</span>(<span class="function">(<span class="params">val, key</span>) =&gt;</span> &#123;</span><br><span class="line">    _obj.<span class="title function_">set</span>(key, <span class="title function_">deepClone</span>(val, map));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环引用需要 map 存储每一个属性值</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数</title>
+    <url>/world/math/linearAlgebra/</url>
+    <content><![CDATA[<span id="more"></span>]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
       </tags>
   </entry>
 </search>

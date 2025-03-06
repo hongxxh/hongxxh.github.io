@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hongxxh.github.io/programming/programmingLanguage/javascript/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <loc>https://hongxxh.github.io/copy/web/deepCopy/</loc>
+    <lastmod>2025-03-06</lastmod>
   </url>
   <url>
     <loc>https://hongxxh.github.io/js/web/evetTask/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-05</lastmod>
   </url>
   <url>
-    <loc>https://hongxxh.github.io/network/network/tcp/</loc>
+    <loc>https://hongxxh.github.io/world/math/linearAlgebra/</loc>
     <lastmod>2025-02-21</lastmod>
   </url>
   <url>
     <loc>https://hongxxh.github.io/welcome/main/</loc>
+    <lastmod>2025-02-21</lastmod>
+  </url>
+  <url>
+    <loc>https://hongxxh.github.io/programming/programmingLanguage/javascript/</loc>
+    <lastmod>2025-02-21</lastmod>
+  </url>
+  <url>
+    <loc>https://hongxxh.github.io/network/network/tcp/</loc>
     <lastmod>2025-02-21</lastmod>
   </url>
   <url>

@@ -6,21 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongxxh.github.io">
-  <title>Vue 使用过程中遇到的坑 | hong&#39;s blogs</title>
+  <title>Archives: 2025/1 | hong&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM 使用同一个组件中两个 form 表单相互影响问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。解决：给两个表单分别加 key 值。原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，V">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue 使用过程中遇到的坑">
-<meta property="og:url" content="https://hongxxh.github.io/js/frame/vue/index.html">
+  <meta name="description" content="hong 的个人博客，主要涉及到编程，个人爱好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="hong&#39;s blogs">
+<meta property="og:url" content="https://hongxxh.github.io/archives/2025/01/index.html">
 <meta property="og:site_name" content="hong&#39;s blogs">
-<meta property="og:description" content="DOM 使用同一个组件中两个 form 表单相互影响问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。解决：给两个表单分别加 key 值。原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，V">
+<meta property="og:description" content="hong 的个人博客，主要涉及到编程，个人爱好">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-12T03:20:50.000Z">
-<meta property="article:modified_time" content="2025-02-21T09:28:18.011Z">
 <meta property="article:author" content="hong">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="web">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="web 前端, JavaScript, Vue, React, Go">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hong&#39;s blogs" type="application/atom+xml">
@@ -163,152 +159,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-frame/vue" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Vue 使用过程中遇到的坑
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2025" class="archive-year">2025</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/world/math/linearAlgebra/" class="archive-article-date">
+  	<time datetime="2024-12-31T16:22:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-01-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/world/math/linearAlgebra/">线性代数</a>
     </h1>
   
 
-        
-        <a href="/js/frame/vue/" class="archive-article-date">
-  	<time datetime="2020-03-12T03:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="DOM-使用"><a href="#DOM-使用" class="headerlink" title="DOM 使用"></a>DOM 使用</h3><h4 id="同一个组件中两个-form-表单相互影响"><a href="#同一个组件中两个-form-表单相互影响" class="headerlink" title="同一个组件中两个 form 表单相互影响"></a>同一个组件中两个 form 表单相互影响</h4><p>问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。<br>解决：给两个表单分别加 key 值。<br>原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，Vue 为了提升性能，不会移动 dom 元素，只是更新相应元素的内容节点。<br>而在 v-if 中，切换 DOM 结构时也可以用来打破复用。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        			<a href="/categories/数学//" class="article-tag-list-link color3">数学</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/article/literature/Xiangshan/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          彷《城东早春》-杨巨源
-        
-      </div>
-    </a>
   
   
-    <a href="/js/frame/webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webpack 使用</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">DOM 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E4%B8%80%E4%B8%AA%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%B8%A4%E4%B8%AA-form-%E8%A1%A8%E5%8D%95%E7%9B%B8%E4%BA%92%E5%BD%B1%E5%93%8D"><span class="toc-number">1.1.</span> <span class="toc-text">同一个组件中两个 form 表单相互影响</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "https://hongxxh.github.io/js/frame/vue/",
-  owner: 'hongxxh',
-  repo: 'hongxxh.github.io',
-  oauth: {
-    client_id: 'd079aeff6eb5f53a0b16',
-    client_secret: '5b6a98474a7f912ac4dcb09a4d8454d309e66e4c',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -331,8 +246,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

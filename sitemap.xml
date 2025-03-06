@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hongxxh.github.io/copy/web/deepCopy/</loc>
+    
+    <lastmod>2025-03-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hongxxh.github.io/js/web/evetTask/</loc>
+    
+    <lastmod>2025-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hongxxh.github.io/world/math/linearAlgebra/</loc>
+    
+    <lastmod>2025-02-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hongxxh.github.io/welcome/main/</loc>
+    
+    <lastmod>2025-02-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hongxxh.github.io/tags/index.html</loc>
     
     <lastmod>2025-02-21</lastmod>
@@ -29,15 +65,6 @@
   </url>
   
   <url>
-    <loc>https://hongxxh.github.io/js/web/evetTask/</loc>
-    
-    <lastmod>2025-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hongxxh.github.io/network/network/tcp/</loc>
     
     <lastmod>2025-02-21</lastmod>
@@ -48,15 +75,6 @@
   
   <url>
     <loc>https://hongxxh.github.io/archives/index.html</loc>
-    
-    <lastmod>2025-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hongxxh.github.io/welcome/main/</loc>
     
     <lastmod>2025-02-21</lastmod>
     
@@ -148,7 +166,7 @@
 
   <url>
     <loc>https://hongxxh.github.io/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -156,84 +174,91 @@
   
   <url>
     <loc>https://hongxxh.github.io/tags/computer/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/React/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/JavaScript/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/web/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/Taro/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/Vue/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/webpack/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/%E8%AF%97%E6%AD%8C/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/programming/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/tags/network/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hongxxh.github.io/tags/math/</loc>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -242,49 +267,56 @@
   
   <url>
     <loc>https://hongxxh.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/%E6%96%87%E5%AD%A6/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/programming/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/JavaScript/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hongxxh.github.io/categories/network/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2025-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hongxxh.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2025-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
