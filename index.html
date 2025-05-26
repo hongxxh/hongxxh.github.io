@@ -161,6 +161,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-programmingLanguage/crawl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/python/programmingLanguage/crawl/">python 爬取静态页面</a>
+    </h1>
+  
+
+        
+        <a href="/python/programmingLanguage/crawl/" class="archive-article-date">
+  	<time datetime="2025-05-25T08:52:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“爬虫”（Web Crawler）这个名字来源于英语中的 “crawl”，意思是“爬行”。比喻网络爬虫像蜘蛛一样在互联网上“爬行”，逐个网页扒取数据，也被称为 “Spider（蜘蛛）”。<br>上世纪 90 年代初，互联网刚刚兴起，网页数量飞速增长，为了建立搜索引擎，必须自动抓取网页内容并进行索引。网络爬虫程序最早诞生于 1993 年。早期的网络爬虫主要用于收集网页统计信息和构建搜索引擎索引。随着 WEB 的发展，现代爬虫可以执行网页的可访问性和安全性检查、模拟用户交互等功能</p>
+        
+          <a class="article-more-a" href="/python/programmingLanguage/crawl/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/python/programmingLanguage/crawl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-web/deepCopy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -444,6 +531,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <span id="more"></span>
+
+
+
+
+
+
 
       
 
@@ -955,99 +1048,6 @@
 
 
   
-    <article id="post-frame/vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/js/frame/vue/">Vue 使用过程中遇到的坑</a>
-    </h1>
-  
-
-        
-        <a href="/js/frame/vue/" class="archive-article-date">
-  	<time datetime="2020-03-12T03:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="DOM-使用"><a href="#DOM-使用" class="headerlink" title="DOM 使用"></a>DOM 使用</h3><h4 id="同一个组件中两个-form-表单相互影响"><a href="#同一个组件中两个-form-表单相互影响" class="headerlink" title="同一个组件中两个 form 表单相互影响"></a>同一个组件中两个 form 表单相互影响</h4><p>问题描述：同一个组件中，两个 v-if 的 form 表单，共享某个检验规则，prop 值不同，但其中一个的规则检验提示也会在另一个表单显示。<br>解决：给两个表单分别加 key 值。<br>原因：没有这个属性的时候， Vue 应用 in-place patch（就地复用）策略。一般的作用在列表里的顺序发生改变的时候，比如 shuffle（列表打乱）的时候，Vue 为了提升性能，不会移动 dom 元素，只是更新相应元素的内容节点。<br>而在 v-if 中，切换 DOM 结构时也可以用来打破复用。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/js/frame/vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1190,6 +1190,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
